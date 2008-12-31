@@ -5,6 +5,7 @@
 from pyhtmlstyle import pyhtmlstyle
 from pyjs import pyjs
 from pysession import *
+import pymsgbox
 
 class pypage(pyhtmlstyle):
 	def __init__(self, cname, url, layout):
@@ -95,7 +96,8 @@ class pypage(pyhtmlstyle):
 		script += "<script language=\"javascript\" src=\"" + self.jsdata.JSONError_url() + "\"></script>"
 		script += "<script language=\"javascript\" src=\"" + self.jsdata.JSONRequestError_url() + "\"></script>"
 		script += "<script language=\"javascript\" src=\"" + self.jsdata.JSONRequest() + "\"></script><script>"
-		
+		script += pymsgbox.js_msgbox()
+
 		for div in self.divlist:
 			scss += div.gencss()
 			

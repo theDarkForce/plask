@@ -43,7 +43,7 @@ class pyelement(pyhtmlstyle):
 			bottom = str(self.bottom) + "px"
 
 		if isset:
-			js +=  " table_" + self.id + ".style.margin=\"" + top + " " + right + " " + bottom + " " + left + "\";\n"
+			js += " table_" + self.id + ".style.margin=\"" + top + " " + right + " " + bottom + " " + left + "\";\n"
 		if self.margin == pyhtmlstyle.float_left:
 			js +=  " table_" + self.id + ".style.float = \"left\";\n"
 		if self.margin == self.margin == pyhtmlstyle.float_right:
