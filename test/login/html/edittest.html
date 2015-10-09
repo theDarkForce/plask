@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><style type="text/css">div#edit_1{ visibility:visible; margin:1px auto auto 0px;}div#button_1{ visibility:visible; margin:0px auto auto 180px;}div#text_1{ visibility:hidden; margin:0px auto auto 0px;}</style></head><body><div id="edit_1"><input id="edit" type="text"></div><div id="button_1"><button id="button" type="button" onclick="buttononclick(this)" >button</button></div><div id="text_1"><p id="text">text</p></div></body><script language="javascript" src="http://127.0.0.1:5000/JSON.js"></script><script language="javascript" src="http://127.0.0.1:5000/JSONError.js"></script><script language="javascript" src="http://127.0.0.1:5000/JSONRequestError.js"></script><script language="javascript" src="http://127.0.0.1:5000/JSONRequest.js"></script><script>function buttononclick(id){var params = {};
+params["input"]=document.getElementById("edit").value;
+
+JSONRequest.post("http://127.0.0.1:5000/button/submit",
+params,function (requestNumber, value, exception){document.getElementById("edit").value=value["output"];
+document.getElementById("edit").style.visibility="hidden";
+document.getElementById("button").style.visibility="hidden";
+document.getElementById("text").style.visibility="visible";
+document.getElementById("text").innerHTML="456";});}
+</script></html>
