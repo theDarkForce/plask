@@ -25,6 +25,9 @@ class pypage(pyhtmlstyle):
 
 		super(pypage, self).__init__(cname, layout)
 
+	def get_obj(self):
+		return "document"
+
 	def init(self):
 		import os
 		if not os.path.exists('./html'):

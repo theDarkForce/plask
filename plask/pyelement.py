@@ -20,6 +20,12 @@ class pyelement(pyhtmlstyle):
 
 		super(pyelement, self).__init__(cname, layout)
 
+	def get_obj(self):
+		return "document.getElementById(\"" + self.id + "\")"
+
+	def remove(self):
+		return self.praframe.get_obj() + ".body.removeChild(msgObj);\n" + self.praframe.get_obj() + ".body.removeChild(table);\n"
+
 	def sub(self):
 		js = ""
 		isset = False
